@@ -1,0 +1,49 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+
+# Test
+*.test
+*.out
+coverage.html
+coverage.txt
+
+# Go workspace
+go.work.sum
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Docker
+docker-compose.override.yml
+
+# Generated (proto gen code is committed — standard Go practice)
+
+# Temporary
+tmp/
+*.tmp
+*.log
+
+# GeoIP database
+*.mmdb
+
+# k6 results
+loadtest/results/*.json
