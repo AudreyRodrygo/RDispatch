@@ -6,3 +6,4 @@ Development log — tracks feature additions as they were implemented.
 - 2025-11-30: feat(delivery): implement Slack webhook channel
 - 2025-12-03: feat(gateway): add REST API with chi router
 - 2025-12-06: feat(worker): implement delivery worker with NATS consumer
+- 2025-12-08: feat(analytics): add delivery success rate tracking
