@@ -6,6 +6,11 @@
 *.dylib
 bin/
 dist/
+gateway-api
+delivery-worker
+
+# Claude Code context file
+CLAUDE.md
 
 # Test
 *.test
