@@ -9,3 +9,4 @@ Development log — tracks feature additions as they were implemented.
 - 2025-12-08: feat(analytics): add delivery success rate tracking
 - 2025-12-12: feat(gateway): add Telegram delivery channel
 - 2025-12-16: feat(queue): add SLA-aware priority levels
+- 2025-12-22: feat(analytics): add per-channel latency histogram
