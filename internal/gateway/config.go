@@ -37,7 +37,7 @@ func Defaults() Config {
 		Postgres: postgres.Config{
 			Host:     "localhost",
 			Port:     5432,
-			Database: "herald",
+			Database: "rdispatch",
 			User:     "sentinel",
 			Password: "sentinel",
 			MaxConns: 10,

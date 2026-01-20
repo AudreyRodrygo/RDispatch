@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: herald/v1/gateway_service.proto
+// source: rdispatch/v1/gateway_service.proto
 
-package heraldv1
+package rdispatchv1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -30,7 +30,7 @@ type SendRequest struct {
 
 func (x *SendRequest) Reset() {
 	*x = SendRequest{}
-	mi := &file_herald_v1_gateway_service_proto_msgTypes[0]
+	mi := &file_rdispatch_v1_gateway_service_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42,7 +42,7 @@ func (x *SendRequest) String() string {
 func (*SendRequest) ProtoMessage() {}
 
 func (x *SendRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_herald_v1_gateway_service_proto_msgTypes[0]
+	mi := &file_rdispatch_v1_gateway_service_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -55,7 +55,7 @@ func (x *SendRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendRequest.ProtoReflect.Descriptor instead.
 func (*SendRequest) Descriptor() ([]byte, []int) {
-	return file_herald_v1_gateway_service_proto_rawDescGZIP(), []int{0}
+	return file_rdispatch_v1_gateway_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *SendRequest) GetNotification() *Notification {
@@ -76,7 +76,7 @@ type SendResponse struct {
 
 func (x *SendResponse) Reset() {
 	*x = SendResponse{}
-	mi := &file_herald_v1_gateway_service_proto_msgTypes[1]
+	mi := &file_rdispatch_v1_gateway_service_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -88,7 +88,7 @@ func (x *SendResponse) String() string {
 func (*SendResponse) ProtoMessage() {}
 
 func (x *SendResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_herald_v1_gateway_service_proto_msgTypes[1]
+	mi := &file_rdispatch_v1_gateway_service_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -101,7 +101,7 @@ func (x *SendResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendResponse.ProtoReflect.Descriptor instead.
 func (*SendResponse) Descriptor() ([]byte, []int) {
-	return file_herald_v1_gateway_service_proto_rawDescGZIP(), []int{1}
+	return file_rdispatch_v1_gateway_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *SendResponse) GetNotificationId() string {
@@ -134,7 +134,7 @@ type SendBatchRequest struct {
 
 func (x *SendBatchRequest) Reset() {
 	*x = SendBatchRequest{}
-	mi := &file_herald_v1_gateway_service_proto_msgTypes[2]
+	mi := &file_rdispatch_v1_gateway_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -146,7 +146,7 @@ func (x *SendBatchRequest) String() string {
 func (*SendBatchRequest) ProtoMessage() {}
 
 func (x *SendBatchRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_herald_v1_gateway_service_proto_msgTypes[2]
+	mi := &file_rdispatch_v1_gateway_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -159,7 +159,7 @@ func (x *SendBatchRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendBatchRequest.ProtoReflect.Descriptor instead.
 func (*SendBatchRequest) Descriptor() ([]byte, []int) {
-	return file_herald_v1_gateway_service_proto_rawDescGZIP(), []int{2}
+	return file_rdispatch_v1_gateway_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *SendBatchRequest) GetNotifications() []*Notification {
@@ -180,7 +180,7 @@ type SendBatchResponse struct {
 
 func (x *SendBatchResponse) Reset() {
 	*x = SendBatchResponse{}
-	mi := &file_herald_v1_gateway_service_proto_msgTypes[3]
+	mi := &file_rdispatch_v1_gateway_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -192,7 +192,7 @@ func (x *SendBatchResponse) String() string {
 func (*SendBatchResponse) ProtoMessage() {}
 
 func (x *SendBatchResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_herald_v1_gateway_service_proto_msgTypes[3]
+	mi := &file_rdispatch_v1_gateway_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -205,7 +205,7 @@ func (x *SendBatchResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendBatchResponse.ProtoReflect.Descriptor instead.
 func (*SendBatchResponse) Descriptor() ([]byte, []int) {
-	return file_herald_v1_gateway_service_proto_rawDescGZIP(), []int{3}
+	return file_rdispatch_v1_gateway_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *SendBatchResponse) GetAccepted() uint32 {
@@ -229,56 +229,55 @@ func (x *SendBatchResponse) GetNotificationIds() []string {
 	return nil
 }
 
-var File_herald_v1_gateway_service_proto protoreflect.FileDescriptor
+var File_rdispatch_v1_gateway_service_proto protoreflect.FileDescriptor
 
-const file_herald_v1_gateway_service_proto_rawDesc = "" +
+const file_rdispatch_v1_gateway_service_proto_rawDesc = "" +
 	"\n" +
-	"\x1fherald/v1/gateway_service.proto\x12\therald.v1\x1a\x1cherald/v1/notification.proto\"J\n" +
-	"\vSendRequest\x12;\n" +
-	"\fnotification\x18\x01 \x01(\v2\x17.herald.v1.NotificationR\fnotification\"~\n" +
+	"\"rdispatch/v1/gateway_service.proto\x12\frdispatch.v1\x1a\x1frdispatch/v1/notification.proto\"M\n" +
+	"\vSendRequest\x12>\n" +
+	"\fnotification\x18\x01 \x01(\v2\x1a.rdispatch.v1.NotificationR\fnotification\"~\n" +
 	"\fSendResponse\x12'\n" +
 	"\x0fnotification_id\x18\x01 \x01(\tR\x0enotificationId\x12\x1a\n" +
 	"\baccepted\x18\x02 \x01(\bR\baccepted\x12)\n" +
-	"\x10rejection_reason\x18\x03 \x01(\tR\x0frejectionReason\"Q\n" +
-	"\x10SendBatchRequest\x12=\n" +
-	"\rnotifications\x18\x01 \x03(\v2\x17.herald.v1.NotificationR\rnotifications\"v\n" +
+	"\x10rejection_reason\x18\x03 \x01(\tR\x0frejectionReason\"T\n" +
+	"\x10SendBatchRequest\x12@\n" +
+	"\rnotifications\x18\x01 \x03(\v2\x1a.rdispatch.v1.NotificationR\rnotifications\"v\n" +
 	"\x11SendBatchResponse\x12\x1a\n" +
 	"\baccepted\x18\x01 \x01(\rR\baccepted\x12\x1a\n" +
 	"\brejected\x18\x02 \x01(\rR\brejected\x12)\n" +
-	"\x10notification_ids\x18\x03 \x03(\tR\x0fnotificationIds2\x91\x01\n" +
-	"\x0eGatewayService\x127\n" +
-	"\x04Send\x12\x16.herald.v1.SendRequest\x1a\x17.herald.v1.SendResponse\x12F\n" +
-	"\tSendBatch\x12\x1b.herald.v1.SendBatchRequest\x1a\x1c.herald.v1.SendBatchResponseB\xa3\x01\n" +
-	"\rcom.herald.v1B\x13GatewayServiceProtoP\x01Z8github.com/AudreyRodrygo/RDispatch/gen/herald/v1;heraldv1\xa2\x02\x03HXX\xaa\x02\tHerald.V1\xca\x02\tHerald\\V1\xe2\x02\x15Herald\\V1\\GPBMetadata\xea\x02\n" +
-	"Herald::V1b\x06proto3"
+	"\x10notification_ids\x18\x03 \x03(\tR\x0fnotificationIds2\x9d\x01\n" +
+	"\x0eGatewayService\x12=\n" +
+	"\x04Send\x12\x19.rdispatch.v1.SendRequest\x1a\x1a.rdispatch.v1.SendResponse\x12L\n" +
+	"\tSendBatch\x12\x1e.rdispatch.v1.SendBatchRequest\x1a\x1f.rdispatch.v1.SendBatchResponseB\xb9\x01\n" +
+	"\x10com.rdispatch.v1B\x13GatewayServiceProtoP\x01Z?github.com/AudreyRodrygo/RDispatch/gen/rdispatch/v1;rdispatchv1\xa2\x02\x03RXX\xaa\x02\fRdispatch.V1\xca\x02\fRdispatch\\V1\xe2\x02\x18Rdispatch\\V1\\GPBMetadata\xea\x02\rRdispatch::V1b\x06proto3"
 
 var (
-	file_herald_v1_gateway_service_proto_rawDescOnce sync.Once
-	file_herald_v1_gateway_service_proto_rawDescData []byte
+	file_rdispatch_v1_gateway_service_proto_rawDescOnce sync.Once
+	file_rdispatch_v1_gateway_service_proto_rawDescData []byte
 )
 
-func file_herald_v1_gateway_service_proto_rawDescGZIP() []byte {
-	file_herald_v1_gateway_service_proto_rawDescOnce.Do(func() {
-		file_herald_v1_gateway_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_herald_v1_gateway_service_proto_rawDesc), len(file_herald_v1_gateway_service_proto_rawDesc)))
+func file_rdispatch_v1_gateway_service_proto_rawDescGZIP() []byte {
+	file_rdispatch_v1_gateway_service_proto_rawDescOnce.Do(func() {
+		file_rdispatch_v1_gateway_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_rdispatch_v1_gateway_service_proto_rawDesc), len(file_rdispatch_v1_gateway_service_proto_rawDesc)))
 	})
-	return file_herald_v1_gateway_service_proto_rawDescData
+	return file_rdispatch_v1_gateway_service_proto_rawDescData
 }
 
-var file_herald_v1_gateway_service_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_herald_v1_gateway_service_proto_goTypes = []any{
-	(*SendRequest)(nil),       // 0: herald.v1.SendRequest
-	(*SendResponse)(nil),      // 1: herald.v1.SendResponse
-	(*SendBatchRequest)(nil),  // 2: herald.v1.SendBatchRequest
-	(*SendBatchResponse)(nil), // 3: herald.v1.SendBatchResponse
-	(*Notification)(nil),      // 4: herald.v1.Notification
+var file_rdispatch_v1_gateway_service_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_rdispatch_v1_gateway_service_proto_goTypes = []any{
+	(*SendRequest)(nil),       // 0: rdispatch.v1.SendRequest
+	(*SendResponse)(nil),      // 1: rdispatch.v1.SendResponse
+	(*SendBatchRequest)(nil),  // 2: rdispatch.v1.SendBatchRequest
+	(*SendBatchResponse)(nil), // 3: rdispatch.v1.SendBatchResponse
+	(*Notification)(nil),      // 4: rdispatch.v1.Notification
 }
-var file_herald_v1_gateway_service_proto_depIdxs = []int32{
-	4, // 0: herald.v1.SendRequest.notification:type_name -> herald.v1.Notification
-	4, // 1: herald.v1.SendBatchRequest.notifications:type_name -> herald.v1.Notification
-	0, // 2: herald.v1.GatewayService.Send:input_type -> herald.v1.SendRequest
-	2, // 3: herald.v1.GatewayService.SendBatch:input_type -> herald.v1.SendBatchRequest
-	1, // 4: herald.v1.GatewayService.Send:output_type -> herald.v1.SendResponse
-	3, // 5: herald.v1.GatewayService.SendBatch:output_type -> herald.v1.SendBatchResponse
+var file_rdispatch_v1_gateway_service_proto_depIdxs = []int32{
+	4, // 0: rdispatch.v1.SendRequest.notification:type_name -> rdispatch.v1.Notification
+	4, // 1: rdispatch.v1.SendBatchRequest.notifications:type_name -> rdispatch.v1.Notification
+	0, // 2: rdispatch.v1.GatewayService.Send:input_type -> rdispatch.v1.SendRequest
+	2, // 3: rdispatch.v1.GatewayService.SendBatch:input_type -> rdispatch.v1.SendBatchRequest
+	1, // 4: rdispatch.v1.GatewayService.Send:output_type -> rdispatch.v1.SendResponse
+	3, // 5: rdispatch.v1.GatewayService.SendBatch:output_type -> rdispatch.v1.SendBatchResponse
 	4, // [4:6] is the sub-list for method output_type
 	2, // [2:4] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -286,27 +285,27 @@ var file_herald_v1_gateway_service_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_herald_v1_gateway_service_proto_init() }
-func file_herald_v1_gateway_service_proto_init() {
-	if File_herald_v1_gateway_service_proto != nil {
+func init() { file_rdispatch_v1_gateway_service_proto_init() }
+func file_rdispatch_v1_gateway_service_proto_init() {
+	if File_rdispatch_v1_gateway_service_proto != nil {
 		return
 	}
-	file_herald_v1_notification_proto_init()
+	file_rdispatch_v1_notification_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_herald_v1_gateway_service_proto_rawDesc), len(file_herald_v1_gateway_service_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_rdispatch_v1_gateway_service_proto_rawDesc), len(file_rdispatch_v1_gateway_service_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_herald_v1_gateway_service_proto_goTypes,
-		DependencyIndexes: file_herald_v1_gateway_service_proto_depIdxs,
-		MessageInfos:      file_herald_v1_gateway_service_proto_msgTypes,
+		GoTypes:           file_rdispatch_v1_gateway_service_proto_goTypes,
+		DependencyIndexes: file_rdispatch_v1_gateway_service_proto_depIdxs,
+		MessageInfos:      file_rdispatch_v1_gateway_service_proto_msgTypes,
 	}.Build()
-	File_herald_v1_gateway_service_proto = out.File
-	file_herald_v1_gateway_service_proto_goTypes = nil
-	file_herald_v1_gateway_service_proto_depIdxs = nil
+	File_rdispatch_v1_gateway_service_proto = out.File
+	file_rdispatch_v1_gateway_service_proto_goTypes = nil
+	file_rdispatch_v1_gateway_service_proto_depIdxs = nil
 }

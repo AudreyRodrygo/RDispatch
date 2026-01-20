@@ -36,7 +36,7 @@ func (w *Worker) Run(ctx context.Context) error {
 	consumer, err := w.js.CreateOrUpdateConsumer(ctx, "HERALD", jetstream.ConsumerConfig{
 		Durable:       "delivery-worker",
 		AckPolicy:     jetstream.AckExplicitPolicy,
-		FilterSubject: "herald.deliver",
+		FilterSubject: "rdispatch.deliver",
 	})
 	if err != nil {
 		return fmt.Errorf("creating NATS consumer: %w", err)
@@ -83,7 +83,7 @@ func (w *Worker) handleMessage(ctx context.Context, msg jetstream.Msg) {
 				zap.Error(err),
 			)
 			_ = w.dlq.Push(ctx, dlq.Message{
-				OriginalTopic: "herald.deliver",
+				OriginalTopic: "rdispatch.deliver",
 				Value:         msg.Data(),
 				Error:         fmt.Sprintf("channel %s: %v", ch.Name(), err),
 				Attempts:      3,

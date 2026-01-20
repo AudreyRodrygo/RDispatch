@@ -43,6 +43,12 @@ Benchmarks run on Apple M4 (`go test -bench=. -benchmem -count=3`):
 | Priority Queue — push | ~10M ops/sec | 100 ns/op | 0 |
 | Priority Queue — push+pop | ~51M ops/sec | 19.6 ns/op | 0 |
 
+## Observability
+
+![RDispatch Grafana Dashboard](assets/rdispatch-dashboard.png)
+
+_Notifications/sec by channel · Delivery latency P95 · SLA compliance (critical: 98.1% · high: 96.4%) · DLQ depth · Delivery success rate_
+
 ## Quick Start
 
 ```bash

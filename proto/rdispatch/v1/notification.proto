@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package herald.v1;
+package rdispatch.v1;
 
-option go_package = "herald/v1";
+option go_package = "rdispatch/v1";
 
 import "google/protobuf/timestamp.proto";
 

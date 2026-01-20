@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.6.1
 // - protoc             (unknown)
-// source: herald/v1/gateway_service.proto
+// source: rdispatch/v1/gateway_service.proto
 
-package heraldv1
+package rdispatchv1
 
 import (
 	context "context"
@@ -19,8 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	GatewayService_Send_FullMethodName      = "/herald.v1.GatewayService/Send"
-	GatewayService_SendBatch_FullMethodName = "/herald.v1.GatewayService/SendBatch"
+	GatewayService_Send_FullMethodName      = "/rdispatch.v1.GatewayService/Send"
+	GatewayService_SendBatch_FullMethodName = "/rdispatch.v1.GatewayService/SendBatch"
 )
 
 // GatewayServiceClient is the client API for GatewayService service.
@@ -150,7 +150,7 @@ func _GatewayService_SendBatch_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GatewayService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "herald.v1.GatewayService",
+	ServiceName: "rdispatch.v1.GatewayService",
 	HandlerType: (*GatewayServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -163,5 +163,5 @@ var GatewayService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "herald/v1/gateway_service.proto",
+	Metadata: "rdispatch/v1/gateway_service.proto",
 }
