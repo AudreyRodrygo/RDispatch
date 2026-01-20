@@ -1,0 +1,107 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "id": 1,
+      "title": "Notifications / sec",
+      "type": "timeseries",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        {
+          "expr": "rate(notifications_sent_total[1m])",
+          "legendFormat": "{{channel}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 }
+    },
+    {
+      "id": 2,
+      "title": "Delivery Latency by Channel (P95)",
+      "type": "timeseries",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, rate(delivery_latency_seconds_bucket[5m]))",
+          "legendFormat": "{{channel}} P95",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "x": 12, "y": 0, "w": 12, "h": 8 }
+    },
+    {
+      "id": 3,
+      "title": "Priority Queue Depth",
+      "type": "gauge",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        {
+          "expr": "priority_queue_depth",
+          "legendFormat": "queue",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "x": 0, "y": 8, "w": 8, "h": 6 }
+    },
+    {
+      "id": 4,
+      "title": "SLA Compliance",
+      "type": "stat",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "% of notifications meeting SLA target",
+      "targets": [
+        {
+          "expr": "sla_compliance_rate",
+          "legendFormat": "{{priority}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "x": 8, "y": 8, "w": 8, "h": 6 }
+    },
+    {
+      "id": 5,
+      "title": "DLQ Depth",
+      "type": "stat",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        {
+          "expr": "dlq_depth",
+          "legendFormat": "dead letters",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "x": 16, "y": 8, "w": 8, "h": 6 }
+    },
+    {
+      "id": 6,
+      "title": "Delivery Success Rate",
+      "type": "timeseries",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        {
+          "expr": "rate(notifications_sent_total[5m]) / (rate(notifications_sent_total[5m]) + rate(notifications_failed_total[5m]))",
+          "legendFormat": "{{channel}}",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "x": 0, "y": 14, "w": 24, "h": 8 }
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 39,
+  "tags": ["inch", "rdispatch"],
+  "templating": { "list": [] },
+  "time": { "from": "now-1h", "to": "now" },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Herald Overview",
+  "uid": "rdispatch-overview",
+  "version": 1,
+  "weekStart": ""
+}

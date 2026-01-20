@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: herald/v1/notification.proto
+// source: rdispatch/v1/notification.proto
 
-package heraldv1
+package rdispatchv1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -62,11 +62,11 @@ func (x Priority) String() string {
 }
 
 func (Priority) Descriptor() protoreflect.EnumDescriptor {
-	return file_herald_v1_notification_proto_enumTypes[0].Descriptor()
+	return file_rdispatch_v1_notification_proto_enumTypes[0].Descriptor()
 }
 
 func (Priority) Type() protoreflect.EnumType {
-	return &file_herald_v1_notification_proto_enumTypes[0]
+	return &file_rdispatch_v1_notification_proto_enumTypes[0]
 }
 
 func (x Priority) Number() protoreflect.EnumNumber {
@@ -75,7 +75,7 @@ func (x Priority) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Priority.Descriptor instead.
 func (Priority) EnumDescriptor() ([]byte, []int) {
-	return file_herald_v1_notification_proto_rawDescGZIP(), []int{0}
+	return file_rdispatch_v1_notification_proto_rawDescGZIP(), []int{0}
 }
 
 // Channel specifies the delivery method.
@@ -124,11 +124,11 @@ func (x Channel) String() string {
 }
 
 func (Channel) Descriptor() protoreflect.EnumDescriptor {
-	return file_herald_v1_notification_proto_enumTypes[1].Descriptor()
+	return file_rdispatch_v1_notification_proto_enumTypes[1].Descriptor()
 }
 
 func (Channel) Type() protoreflect.EnumType {
-	return &file_herald_v1_notification_proto_enumTypes[1]
+	return &file_rdispatch_v1_notification_proto_enumTypes[1]
 }
 
 func (x Channel) Number() protoreflect.EnumNumber {
@@ -137,7 +137,7 @@ func (x Channel) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Channel.Descriptor instead.
 func (Channel) EnumDescriptor() ([]byte, []int) {
-	return file_herald_v1_notification_proto_rawDescGZIP(), []int{1}
+	return file_rdispatch_v1_notification_proto_rawDescGZIP(), []int{1}
 }
 
 // DeliveryStatus tracks notification lifecycle.
@@ -183,11 +183,11 @@ func (x DeliveryStatus) String() string {
 }
 
 func (DeliveryStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_herald_v1_notification_proto_enumTypes[2].Descriptor()
+	return file_rdispatch_v1_notification_proto_enumTypes[2].Descriptor()
 }
 
 func (DeliveryStatus) Type() protoreflect.EnumType {
-	return &file_herald_v1_notification_proto_enumTypes[2]
+	return &file_rdispatch_v1_notification_proto_enumTypes[2]
 }
 
 func (x DeliveryStatus) Number() protoreflect.EnumNumber {
@@ -196,7 +196,7 @@ func (x DeliveryStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use DeliveryStatus.Descriptor instead.
 func (DeliveryStatus) EnumDescriptor() ([]byte, []int) {
-	return file_herald_v1_notification_proto_rawDescGZIP(), []int{2}
+	return file_rdispatch_v1_notification_proto_rawDescGZIP(), []int{2}
 }
 
 // Notification represents a message to be delivered.
@@ -205,9 +205,9 @@ type Notification struct {
 	// Unique notification identifier.
 	NotificationId string `protobuf:"bytes,1,opt,name=notification_id,json=notificationId,proto3" json:"notification_id,omitempty"`
 	// Delivery priority (determines SLA).
-	Priority Priority `protobuf:"varint,2,opt,name=priority,proto3,enum=herald.v1.Priority" json:"priority,omitempty"`
+	Priority Priority `protobuf:"varint,2,opt,name=priority,proto3,enum=rdispatch.v1.Priority" json:"priority,omitempty"`
 	// Target channels for delivery.
-	Channels []Channel `protobuf:"varint,3,rep,packed,name=channels,proto3,enum=herald.v1.Channel" json:"channels,omitempty"`
+	Channels []Channel `protobuf:"varint,3,rep,packed,name=channels,proto3,enum=rdispatch.v1.Channel" json:"channels,omitempty"`
 	// Recipient identifier (email, user ID, webhook URL, etc.).
 	Recipient string `protobuf:"bytes,4,opt,name=recipient,proto3" json:"recipient,omitempty"`
 	// Template ID to use for rendering.
@@ -232,7 +232,7 @@ type Notification struct {
 
 func (x *Notification) Reset() {
 	*x = Notification{}
-	mi := &file_herald_v1_notification_proto_msgTypes[0]
+	mi := &file_rdispatch_v1_notification_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -244,7 +244,7 @@ func (x *Notification) String() string {
 func (*Notification) ProtoMessage() {}
 
 func (x *Notification) ProtoReflect() protoreflect.Message {
-	mi := &file_herald_v1_notification_proto_msgTypes[0]
+	mi := &file_rdispatch_v1_notification_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -257,7 +257,7 @@ func (x *Notification) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Notification.ProtoReflect.Descriptor instead.
 func (*Notification) Descriptor() ([]byte, []int) {
-	return file_herald_v1_notification_proto_rawDescGZIP(), []int{0}
+	return file_rdispatch_v1_notification_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Notification) GetNotificationId() string {
@@ -348,8 +348,8 @@ func (x *Notification) GetMetadata() map[string]string {
 type DeliveryReceipt struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	NotificationId string                 `protobuf:"bytes,1,opt,name=notification_id,json=notificationId,proto3" json:"notification_id,omitempty"`
-	Channel        Channel                `protobuf:"varint,2,opt,name=channel,proto3,enum=herald.v1.Channel" json:"channel,omitempty"`
-	Status         DeliveryStatus         `protobuf:"varint,3,opt,name=status,proto3,enum=herald.v1.DeliveryStatus" json:"status,omitempty"`
+	Channel        Channel                `protobuf:"varint,2,opt,name=channel,proto3,enum=rdispatch.v1.Channel" json:"channel,omitempty"`
+	Status         DeliveryStatus         `protobuf:"varint,3,opt,name=status,proto3,enum=rdispatch.v1.DeliveryStatus" json:"status,omitempty"`
 	AttemptedAt    *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=attempted_at,json=attemptedAt,proto3" json:"attempted_at,omitempty"`
 	DeliveredAt    *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=delivered_at,json=deliveredAt,proto3" json:"delivered_at,omitempty"`
 	ErrorMessage   string                 `protobuf:"bytes,6,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
@@ -360,7 +360,7 @@ type DeliveryReceipt struct {
 
 func (x *DeliveryReceipt) Reset() {
 	*x = DeliveryReceipt{}
-	mi := &file_herald_v1_notification_proto_msgTypes[1]
+	mi := &file_rdispatch_v1_notification_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -372,7 +372,7 @@ func (x *DeliveryReceipt) String() string {
 func (*DeliveryReceipt) ProtoMessage() {}
 
 func (x *DeliveryReceipt) ProtoReflect() protoreflect.Message {
-	mi := &file_herald_v1_notification_proto_msgTypes[1]
+	mi := &file_rdispatch_v1_notification_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -385,7 +385,7 @@ func (x *DeliveryReceipt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeliveryReceipt.ProtoReflect.Descriptor instead.
 func (*DeliveryReceipt) Descriptor() ([]byte, []int) {
-	return file_herald_v1_notification_proto_rawDescGZIP(), []int{1}
+	return file_rdispatch_v1_notification_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *DeliveryReceipt) GetNotificationId() string {
@@ -437,37 +437,37 @@ func (x *DeliveryReceipt) GetAttemptNumber() uint32 {
 	return 0
 }
 
-var File_herald_v1_notification_proto protoreflect.FileDescriptor
+var File_rdispatch_v1_notification_proto protoreflect.FileDescriptor
 
-const file_herald_v1_notification_proto_rawDesc = "" +
+const file_rdispatch_v1_notification_proto_rawDesc = "" +
 	"\n" +
-	"\x1cherald/v1/notification.proto\x12\therald.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf9\x04\n" +
+	"\x1frdispatch/v1/notification.proto\x12\frdispatch.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x85\x05\n" +
 	"\fNotification\x12'\n" +
-	"\x0fnotification_id\x18\x01 \x01(\tR\x0enotificationId\x12/\n" +
-	"\bpriority\x18\x02 \x01(\x0e2\x13.herald.v1.PriorityR\bpriority\x12.\n" +
-	"\bchannels\x18\x03 \x03(\x0e2\x12.herald.v1.ChannelR\bchannels\x12\x1c\n" +
+	"\x0fnotification_id\x18\x01 \x01(\tR\x0enotificationId\x122\n" +
+	"\bpriority\x18\x02 \x01(\x0e2\x16.rdispatch.v1.PriorityR\bpriority\x121\n" +
+	"\bchannels\x18\x03 \x03(\x0e2\x15.rdispatch.v1.ChannelR\bchannels\x12\x1c\n" +
 	"\trecipient\x18\x04 \x01(\tR\trecipient\x12\x1f\n" +
 	"\vtemplate_id\x18\x05 \x01(\tR\n" +
-	"templateId\x12D\n" +
-	"\tvariables\x18\x06 \x03(\v2&.herald.v1.Notification.VariablesEntryR\tvariables\x12\x18\n" +
+	"templateId\x12G\n" +
+	"\tvariables\x18\x06 \x03(\v2).rdispatch.v1.Notification.VariablesEntryR\tvariables\x12\x18\n" +
 	"\asubject\x18\a \x01(\tR\asubject\x12\x12\n" +
 	"\x04body\x18\b \x01(\tR\x04body\x12\x16\n" +
 	"\x06source\x18\t \x01(\tR\x06source\x12\x1b\n" +
 	"\tdedup_key\x18\n" +
 	" \x01(\tR\bdedupKey\x129\n" +
 	"\n" +
-	"created_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12A\n" +
-	"\bmetadata\x18\f \x03(\v2%.herald.v1.Notification.MetadataEntryR\bmetadata\x1a<\n" +
+	"created_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12D\n" +
+	"\bmetadata\x18\f \x03(\v2(.rdispatch.v1.Notification.MetadataEntryR\bmetadata\x1a<\n" +
 	"\x0eVariablesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\x1a;\n" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xe5\x02\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xeb\x02\n" +
 	"\x0fDeliveryReceipt\x12'\n" +
-	"\x0fnotification_id\x18\x01 \x01(\tR\x0enotificationId\x12,\n" +
-	"\achannel\x18\x02 \x01(\x0e2\x12.herald.v1.ChannelR\achannel\x121\n" +
-	"\x06status\x18\x03 \x01(\x0e2\x19.herald.v1.DeliveryStatusR\x06status\x12=\n" +
+	"\x0fnotification_id\x18\x01 \x01(\tR\x0enotificationId\x12/\n" +
+	"\achannel\x18\x02 \x01(\x0e2\x15.rdispatch.v1.ChannelR\achannel\x124\n" +
+	"\x06status\x18\x03 \x01(\x0e2\x1c.rdispatch.v1.DeliveryStatusR\x06status\x12=\n" +
 	"\fattempted_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\vattemptedAt\x12=\n" +
 	"\fdelivered_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\vdeliveredAt\x12#\n" +
 	"\rerror_message\x18\x06 \x01(\tR\ferrorMessage\x12%\n" +
@@ -492,44 +492,43 @@ const file_herald_v1_notification_proto_rawDesc = "" +
 	"\x14DELIVERY_STATUS_SENT\x10\x02\x12\x1d\n" +
 	"\x19DELIVERY_STATUS_DELIVERED\x10\x03\x12\x1a\n" +
 	"\x16DELIVERY_STATUS_FAILED\x10\x04\x12\x17\n" +
-	"\x13DELIVERY_STATUS_DLQ\x10\x05B\xa1\x01\n" +
-	"\rcom.herald.v1B\x11NotificationProtoP\x01Z8github.com/AudreyRodrygo/RDispatch/gen/herald/v1;heraldv1\xa2\x02\x03HXX\xaa\x02\tHerald.V1\xca\x02\tHerald\\V1\xe2\x02\x15Herald\\V1\\GPBMetadata\xea\x02\n" +
-	"Herald::V1b\x06proto3"
+	"\x13DELIVERY_STATUS_DLQ\x10\x05B\xb7\x01\n" +
+	"\x10com.rdispatch.v1B\x11NotificationProtoP\x01Z?github.com/AudreyRodrygo/RDispatch/gen/rdispatch/v1;rdispatchv1\xa2\x02\x03RXX\xaa\x02\fRdispatch.V1\xca\x02\fRdispatch\\V1\xe2\x02\x18Rdispatch\\V1\\GPBMetadata\xea\x02\rRdispatch::V1b\x06proto3"
 
 var (
-	file_herald_v1_notification_proto_rawDescOnce sync.Once
-	file_herald_v1_notification_proto_rawDescData []byte
+	file_rdispatch_v1_notification_proto_rawDescOnce sync.Once
+	file_rdispatch_v1_notification_proto_rawDescData []byte
 )
 
-func file_herald_v1_notification_proto_rawDescGZIP() []byte {
-	file_herald_v1_notification_proto_rawDescOnce.Do(func() {
-		file_herald_v1_notification_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_herald_v1_notification_proto_rawDesc), len(file_herald_v1_notification_proto_rawDesc)))
+func file_rdispatch_v1_notification_proto_rawDescGZIP() []byte {
+	file_rdispatch_v1_notification_proto_rawDescOnce.Do(func() {
+		file_rdispatch_v1_notification_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_rdispatch_v1_notification_proto_rawDesc), len(file_rdispatch_v1_notification_proto_rawDesc)))
 	})
-	return file_herald_v1_notification_proto_rawDescData
+	return file_rdispatch_v1_notification_proto_rawDescData
 }
 
-var file_herald_v1_notification_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_herald_v1_notification_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_herald_v1_notification_proto_goTypes = []any{
-	(Priority)(0),                 // 0: herald.v1.Priority
-	(Channel)(0),                  // 1: herald.v1.Channel
-	(DeliveryStatus)(0),           // 2: herald.v1.DeliveryStatus
-	(*Notification)(nil),          // 3: herald.v1.Notification
-	(*DeliveryReceipt)(nil),       // 4: herald.v1.DeliveryReceipt
-	nil,                           // 5: herald.v1.Notification.VariablesEntry
-	nil,                           // 6: herald.v1.Notification.MetadataEntry
+var file_rdispatch_v1_notification_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_rdispatch_v1_notification_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_rdispatch_v1_notification_proto_goTypes = []any{
+	(Priority)(0),                 // 0: rdispatch.v1.Priority
+	(Channel)(0),                  // 1: rdispatch.v1.Channel
+	(DeliveryStatus)(0),           // 2: rdispatch.v1.DeliveryStatus
+	(*Notification)(nil),          // 3: rdispatch.v1.Notification
+	(*DeliveryReceipt)(nil),       // 4: rdispatch.v1.DeliveryReceipt
+	nil,                           // 5: rdispatch.v1.Notification.VariablesEntry
+	nil,                           // 6: rdispatch.v1.Notification.MetadataEntry
 	(*timestamppb.Timestamp)(nil), // 7: google.protobuf.Timestamp
 }
-var file_herald_v1_notification_proto_depIdxs = []int32{
-	0, // 0: herald.v1.Notification.priority:type_name -> herald.v1.Priority
-	1, // 1: herald.v1.Notification.channels:type_name -> herald.v1.Channel
-	5, // 2: herald.v1.Notification.variables:type_name -> herald.v1.Notification.VariablesEntry
-	7, // 3: herald.v1.Notification.created_at:type_name -> google.protobuf.Timestamp
-	6, // 4: herald.v1.Notification.metadata:type_name -> herald.v1.Notification.MetadataEntry
-	1, // 5: herald.v1.DeliveryReceipt.channel:type_name -> herald.v1.Channel
-	2, // 6: herald.v1.DeliveryReceipt.status:type_name -> herald.v1.DeliveryStatus
-	7, // 7: herald.v1.DeliveryReceipt.attempted_at:type_name -> google.protobuf.Timestamp
-	7, // 8: herald.v1.DeliveryReceipt.delivered_at:type_name -> google.protobuf.Timestamp
+var file_rdispatch_v1_notification_proto_depIdxs = []int32{
+	0, // 0: rdispatch.v1.Notification.priority:type_name -> rdispatch.v1.Priority
+	1, // 1: rdispatch.v1.Notification.channels:type_name -> rdispatch.v1.Channel
+	5, // 2: rdispatch.v1.Notification.variables:type_name -> rdispatch.v1.Notification.VariablesEntry
+	7, // 3: rdispatch.v1.Notification.created_at:type_name -> google.protobuf.Timestamp
+	6, // 4: rdispatch.v1.Notification.metadata:type_name -> rdispatch.v1.Notification.MetadataEntry
+	1, // 5: rdispatch.v1.DeliveryReceipt.channel:type_name -> rdispatch.v1.Channel
+	2, // 6: rdispatch.v1.DeliveryReceipt.status:type_name -> rdispatch.v1.DeliveryStatus
+	7, // 7: rdispatch.v1.DeliveryReceipt.attempted_at:type_name -> google.protobuf.Timestamp
+	7, // 8: rdispatch.v1.DeliveryReceipt.delivered_at:type_name -> google.protobuf.Timestamp
 	9, // [9:9] is the sub-list for method output_type
 	9, // [9:9] is the sub-list for method input_type
 	9, // [9:9] is the sub-list for extension type_name
@@ -537,27 +536,27 @@ var file_herald_v1_notification_proto_depIdxs = []int32{
 	0, // [0:9] is the sub-list for field type_name
 }
 
-func init() { file_herald_v1_notification_proto_init() }
-func file_herald_v1_notification_proto_init() {
-	if File_herald_v1_notification_proto != nil {
+func init() { file_rdispatch_v1_notification_proto_init() }
+func file_rdispatch_v1_notification_proto_init() {
+	if File_rdispatch_v1_notification_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_herald_v1_notification_proto_rawDesc), len(file_herald_v1_notification_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_rdispatch_v1_notification_proto_rawDesc), len(file_rdispatch_v1_notification_proto_rawDesc)),
 			NumEnums:      3,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_herald_v1_notification_proto_goTypes,
-		DependencyIndexes: file_herald_v1_notification_proto_depIdxs,
-		EnumInfos:         file_herald_v1_notification_proto_enumTypes,
-		MessageInfos:      file_herald_v1_notification_proto_msgTypes,
+		GoTypes:           file_rdispatch_v1_notification_proto_goTypes,
+		DependencyIndexes: file_rdispatch_v1_notification_proto_depIdxs,
+		EnumInfos:         file_rdispatch_v1_notification_proto_enumTypes,
+		MessageInfos:      file_rdispatch_v1_notification_proto_msgTypes,
 	}.Build()
-	File_herald_v1_notification_proto = out.File
-	file_herald_v1_notification_proto_goTypes = nil
-	file_herald_v1_notification_proto_depIdxs = nil
+	File_rdispatch_v1_notification_proto = out.File
+	file_rdispatch_v1_notification_proto_goTypes = nil
+	file_rdispatch_v1_notification_proto_depIdxs = nil
 }

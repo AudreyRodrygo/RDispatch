@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package herald.v1;
+package rdispatch.v1;
 
-option go_package = "herald/v1";
+option go_package = "rdispatch/v1";
 
-import "herald/v1/notification.proto";
+import "rdispatch/v1/notification.proto";
 
 // GatewayService accepts notifications for delivery.
 service GatewayService {

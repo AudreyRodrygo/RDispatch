@@ -54,7 +54,7 @@ func run() error {
 	// Ensure HERALD stream exists.
 	if streamErr := natsutil.EnsureStream(ctx, js, natsutil.StreamConfig{
 		Name:     "HERALD",
-		Subjects: []string{"herald.>"},
+		Subjects: []string{"rdispatch.>"},
 	}); streamErr != nil {
 		return fmt.Errorf("ensuring NATS stream: %w", streamErr)
 	}
@@ -114,7 +114,7 @@ func drainQueue(ctx context.Context, queue *priority.Queue, js jetstream.JetStre
 			return // Context cancelled.
 		}
 
-		_, err := js.Publish(ctx, "herald.deliver", item.Payload)
+		_, err := js.Publish(ctx, "rdispatch.deliver", item.Payload)
 		if err != nil {
 			logger.Error("failed to publish to NATS",
 				zap.String("id", item.ID),
