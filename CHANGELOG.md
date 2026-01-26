@@ -12,3 +12,4 @@ Development log — tracks feature additions as they were implemented.
 - 2025-12-22: feat(analytics): add per-channel latency histogram
 - 2026-01-02: feat(gateway): add bulk notification endpoint
 - 2026-01-15: feat(gateway): add notification status polling endpoint
+- 2026-01-26: feat(delivery): add retry with exponential backoff
