@@ -41,7 +41,7 @@ Benchmarks run on Apple M4 (`go test -bench=. -benchmem -count=3`):
 | Component | Throughput | Latency | Allocs |
 |-----------|-----------|---------|--------|
 | Priority Queue — push | ~10M ops/sec | 100 ns/op | 0 |
-| Priority Queue — push+pop | ~51M ops/sec | 19.6 ns/op | 0 |
+| Priority Queue — push+pop | ~5.5M ops/sec | 182 ns/op | 0 |
 
 ## Observability
 
