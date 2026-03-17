@@ -41,8 +41,8 @@ Benchmarks run on Apple M4 (`go test -bench=. -benchmem -count=3`):
 
 | Component | Throughput | Latency | Allocs |
 |-----------|-----------|---------|--------|
-| Priority Queue — push | ~10M ops/sec | 100 ns/op | 0 |
-| Priority Queue — push+pop | ~5.5M ops/sec | 182 ns/op | 0 |
+| Priority Queue — push | ~10M ops/sec | 100 ns/op ± 5 | 0 |
+| Priority Queue — push+pop | ~5.5M ops/sec | 182 ns/op ± 9 | 0 |
 
 ## Observability
 
@@ -62,6 +62,10 @@ make build
 # Run (separate terminals)
 ./bin/gateway-api        # REST API on :8090
 ./bin/delivery-worker    # Consumes from NATS
+
+# Note: RDispatch uses Go workspaces (go.work) across 3 modules: root, gen/, pkg/
+# This allows developing all modules together without publishing intermediate packages
+# go.work use (. ./gen ./pkg)
 
 # Send a test notification
 curl -X POST http://localhost:8090/api/v1/notifications \
