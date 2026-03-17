@@ -10,11 +10,11 @@ Smart notification gateway with priority-based delivery, multi-channel routing, 
 
 ```
                 ┌──────────────┐
-Clients ──────▶ │  Gateway API  │ ──▶ Priority Queue (heap) ──▶ NATS JetStream
-                │  REST API     │                                     │
-                └──────────────┘                                     ▼
+Clients ──────▶ │  Gateway API │ ──▶ Priority Queue (heap) ──▶ NATS JetStream
+                │  REST API    │                                    │
+                └──────────────┘                                    ▼
                                                           ┌─────────────────┐
-                                                          │ Delivery Worker  │
+                                                          │ Delivery Worker │
                                                           ├─────────────────┤
                                                           │ Webhook (HMAC)  │
                                                           │ Telegram Bot    │
