@@ -20,7 +20,7 @@ type SendRequest struct {
 	Subject   string            `json:"subject"`
 	Body      string            `json:"body"`
 	Channel   string            `json:"channel"` // email, webhook, telegram, slack
-	Source    string            `json:"source"`  // sentinel, manual, etc.
+	Source    string            `json:"source"`  // "inch", "manual", etc.
 	Metadata  map[string]string `json:"metadata"`
 }
 
@@ -31,7 +31,7 @@ type SendResponse struct {
 	Priority       string `json:"priority"`
 }
 
-// Server handles HTTP requests for the Herald gateway.
+// Server handles HTTP requests for the RDispatch gateway.
 type Server struct {
 	queue  *priority.Queue
 	logger *zap.Logger

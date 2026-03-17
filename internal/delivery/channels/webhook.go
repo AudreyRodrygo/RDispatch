@@ -51,12 +51,12 @@ func (w *Webhook) Send(ctx context.Context, notif delivery.Notification) error {
 	}
 
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("X-Herald-Event", "notification")
+	req.Header.Set("X-RDispatch-Event", "notification")
 
 	if w.secret != "" {
 		mac := hmac.New(sha256.New, []byte(w.secret))
 		mac.Write(body)
-		req.Header.Set("X-Herald-Signature", "sha256="+hex.EncodeToString(mac.Sum(nil)))
+		req.Header.Set("X-RDispatch-Signature", "sha256="+hex.EncodeToString(mac.Sum(nil)))
 	}
 
 	resp, err := w.client.Do(req)

@@ -1,4 +1,4 @@
-// Package analytics provides delivery statistics for Herald.
+// Package analytics provides delivery statistics for RDispatch.
 //
 // Tracks notification delivery metrics:
 //   - Success/failure rates per channel
