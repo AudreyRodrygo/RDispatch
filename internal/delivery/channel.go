@@ -1,4 +1,4 @@
-// Package delivery implements the Herald delivery-worker service.
+// Package delivery implements the RDispatch delivery-worker service.
 //
 // The worker reads from NATS JetStream and delivers notifications
 // through multiple channels (Email, Webhook, Telegram, Slack).
@@ -40,7 +40,7 @@ func (n Notification) Recipient() string {
 
 // Channel is the interface for notification delivery methods.
 //
-// Same pattern as Sentinel dispatcher — Strategy Pattern.
+// Same pattern as INCH dispatcher — Strategy Pattern.
 // Adding a new channel = one new file implementing this interface.
 type Channel interface {
 	Send(ctx context.Context, notification Notification) error

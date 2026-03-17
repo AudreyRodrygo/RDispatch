@@ -11,7 +11,7 @@ Smart notification gateway with priority-based delivery, multi-channel routing, 
 ```
                 ┌──────────────┐
 Clients ──────▶ │  Gateway API  │ ──▶ Priority Queue (heap) ──▶ NATS JetStream
-                │  REST + gRPC  │                                     │
+                │  REST API     │                                     │
                 └──────────────┘                                     ▼
                                                           ┌─────────────────┐
                                                           │ Delivery Worker  │
@@ -32,6 +32,7 @@ Clients ──────▶ │  Gateway API  │ ──▶ Priority Queue (he
 - **Per-client rate limiting** — token bucket algorithm
 - **Retry with exponential backoff** — configurable max attempts with jitter
 - **Dead Letter Queue** — failed notifications stored for replay
+- **Circuit breaker** — per-channel fault isolation, auto-recovery with half-open probe
 - **Delivery analytics** — success rate, avg latency, failure counts per channel
 
 ## Performance

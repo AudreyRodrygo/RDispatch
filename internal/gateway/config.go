@@ -1,4 +1,4 @@
-// Package gateway implements the Herald gateway-api service.
+// Package gateway implements the RDispatch gateway-api service.
 //
 // The gateway accepts notification requests via REST and gRPC,
 // prioritizes them, and publishes to NATS for the delivery worker.
@@ -38,8 +38,8 @@ func Defaults() Config {
 			Host:     "localhost",
 			Port:     5432,
 			Database: "rdispatch",
-			User:     "sentinel",
-			Password: "sentinel",
+			User:     "rdispatch",
+			Password: "rdispatch",
 			MaxConns: 10,
 		},
 		NATS: natsutil.Config{

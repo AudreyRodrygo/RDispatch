@@ -1,14 +1,14 @@
 // Package postgres provides a PostgreSQL connection pool factory and migration runner
-// for Sentinel and Herald services.
+// for RDispatch services.
 //
 // Each service creates a pool at startup:
 //
 //	pool, err := postgres.NewPool(ctx, postgres.Config{
 //	    Host:     "localhost",
 //	    Port:     5432,
-//	    Database: "sentinel",
-//	    User:     "sentinel",
-//	    Password: "sentinel",
+//	    Database: "rdispatch",
+//	    User:     "rdispatch",
+//	    Password: "rdispatch",
 //	    MaxConns: 10,
 //	})
 //	defer pool.Close()
